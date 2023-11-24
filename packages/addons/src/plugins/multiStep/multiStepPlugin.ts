@@ -319,8 +319,8 @@ async function isTargetStepAllowed(
 
   // show the current step errors because this step has
   // been visited.
-  triggerStepValidations(currentStep)
-  currentStep.showStepErrors = true
+  //triggerStepValidations(currentStep)
+  //currentStep.showStepErrors = true
 
   if (targetStepIndex < currentStepIndex) {
     // we can always step backwards
