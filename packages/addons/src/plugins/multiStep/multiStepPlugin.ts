@@ -289,16 +289,20 @@ async function isTargetStepAllowed(
 
   // show the current step errors because this step has
   // been visited.
-  const currentStepIsValid = triggerStepValidations(currentStep)
-  currentStep.showStepErrors = true
+
+  // GOA-NRW: dont trigger validations for current step
+  //const currentStepIsValid = triggerStepValidations(currentStep)
+  //currentStep.showStepErrors = true
 
   // if we are navigating forward, check our current step is complete
   if (targetStepIndex >= currentStepIndex) {
     // if the current step is invalid and we do not allow incomplete
     // then prevent navigation
-    if (!currentStepIsValid && !allowIncomplete) {
-      return false
-    }
+    
+    // GOA-NRW: dont prevent navigation, this is done in beforeStepChange implementation
+    //if (!currentStepIsValid && !allowIncomplete) {
+    //  return false
+    //}
   }
 
   // check how many steps we need to step forward
